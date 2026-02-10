@@ -2,39 +2,101 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>VOZ DE LUZ - Música Sanadora</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Música Sanadora - Voz de Luz</title>
 
-<link rel="stylesheet" href="css/estilo.css">
+<style>
+body{
+  margin:0;
+  font-family: 'Segoe UI', sans-serif;
+  background: radial-gradient(circle at top, #0b1220, #000);
+  color:#e8f0ff;
+  text-align:center;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+}
+
+.contenedor{
+  width:90%;
+  max-width:500px;
+}
+
+.card{
+  background:rgba(255,255,255,0.05);
+  backdrop-filter: blur(10px);
+  border-radius:18px;
+  padding:25px;
+  box-shadow:0 0 25px rgba(0,180,255,0.2);
+  margin-bottom:20px;
+}
+
+h1{
+  color:#6ee7ff;
+  margin-bottom:5px;
+}
+
+.sub{
+  color:#9fb8ff;
+  margin-bottom:20px;
+}
+
+button{
+  width:100%;
+  padding:12px;
+  border:none;
+  border-radius:10px;
+  background:linear-gradient(90deg,#00e0ff,#4f8cff);
+  color:white;
+  font-size:16px;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+button:hover{
+  transform:scale(1.05);
+  box-shadow:0 0 12px rgba(0,200,255,0.7);
+}
+</style>
 </head>
 
 <body>
 
 <div class="contenedor">
 
-<h1>🎶 Música Sanadora</h1>
-<p class="sub">Cerrá los ojos. Respirá. Dios está acá 🤍</p>
+<h1>🎧 Música Sanadora</h1>
+<p class="sub">Respirá… soltá… Dios está contigo ✨</p>
 
 <div class="card">
 
-<h3>Volver a la Luz</h3>
-<audio controls>
-  <source src="audio/musica.mp3" type="audio/mpeg">
+<audio id="musica" autoplay loop>
+  <source src="audio/alabanza.mp3" type="audio/mpeg">
 </audio>
 
-<p class="frase">
-“Dios sana en silencio, donde nadie ve.”
-</p>
+<p>Dejá que la presencia de Dios llene tu corazón 💙</p>
 
 </div>
 
-<br>
+<div class="card">
+<h3>📖 Presencia de Dios</h3>
+<p>En el silencio Él habla…<br>
+En la calma Él sana…<br>
+En la fe Él transforma ✨</p>
+</div>
 
-<button onclick="compartir()">📲 Compartir Luz</button>
-<br><br>
-<a href="index.html">⬅ Volver</a>
+<button onclick="location.href='index.html'">⬅ Volver</button>
 
 </div>
 
-<script src="js/app.js"></script>
+<script>
+window.onload = function(){
+  let audio = document.getElementById("musica");
+  audio.play().catch(() => {
+    document.body.addEventListener("click", () => audio.play(), { once: true });
+  });
+};
+</script>
+
 </body>
 </html>

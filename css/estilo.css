@@ -1,39 +1,106 @@
+/* ===== FONDO ESPIRITUAL PROFUNDO ===== */
 body{
-  font-family: Arial, sans-serif;
-  background: linear-gradient(180deg,#ecffff,#f6ffff,#ffffff);
   margin:0;
+  font-family:'Poppins', sans-serif;
+  background: radial-gradient(circle at top, #1a2a33, #0b1419 70%);
+  color:#e8f6ff;
   text-align:center;
-  color:#003333;
+  overflow-x:hidden;
 }
 
+/* HALO DE LUZ SUAVE */
+body::before{
+  content:"";
+  position:fixed;
+  top:-200px;
+  left:50%;
+  transform:translateX(-50%);
+  width:600px;
+  height:600px;
+  background:radial-gradient(circle, rgba(0,255,200,0.12), transparent 70%);
+  pointer-events:none;
+}
+
+/* CONTENEDOR */
 .contenedor{
-  max-width:600px;
-  margin:40px auto;
-  padding:20px;
-}
-
-h1{font-size:32px;margin-bottom:5px;}
-.sub{opacity:0.7;}
-
-.card{
-  background:white;
+  max-width:430px;
+  margin:70px auto;
   padding:25px;
-  border-radius:15px;
-  box-shadow:0 10px 20px rgba(0,0,0,0.08);
-  margin:20px 0;
 }
 
+/* TITULO ESPIRITUAL */
+h1{
+  font-size:38px;
+  font-weight:700;
+  letter-spacing:2px;
+  color:#7fffd4;
+  text-shadow:0 0 12px rgba(127,255,212,0.6);
+  margin-bottom:5px;
+}
+
+/* SUBTITULO */
+.sub{
+  color:#b7dfff;
+  font-size:15px;
+  margin-bottom:28px;
+  opacity:0.9;
+}
+
+/* TARJETA MENSAJE */
+.card{
+  background:rgba(255,255,255,0.05);
+  backdrop-filter:blur(8px);
+  border-radius:16px;
+  padding:22px;
+  box-shadow:0 0 25px rgba(0,255,200,0.15);
+  margin-bottom:22px;
+}
+
+/* MENSAJE */
+#mensaje{
+  font-size:17px;
+  font-weight:500;
+  color:#eaffff;
+}
+
+/* BOTONES LUZ DIVINA */
 button{
-  display:block;
   width:100%;
-  margin:10px 0;
   padding:14px;
+  margin:9px 0;
   border:none;
-  border-radius:8px;
-  background:linear-gradient(90deg,#00ffd5,#00cfcf);
-  font-weight:bold;
+  border-radius:14px;
+  background:linear-gradient(90deg,#2af598,#00c6ff);
+  color:#002b36;
+  font-size:16px;
+  font-weight:600;
   cursor:pointer;
-  transition:0.2s;
+  transition:0.25s;
 }
 
-button:hover{transform:scale(1.03);}
+button:hover{
+  transform:scale(1.05);
+  box-shadow:0 0 18px rgba(0,255,200,0.6);
+}
+
+/* INPUT Y TEXTAREA */
+input, textarea{
+  width:100%;
+  padding:14px;
+  margin:8px 0;
+  border:none;
+  border-radius:10px;
+  background:rgba(255,255,255,0.07);
+  color:white;
+  font-size:15px;
+  outline:none;
+}
+
+textarea{
+  min-height:120px;
+}
+
+/* TEXTO PLACEHOLDER */
+::placeholder{
+  color:#b7dfff;
+}
